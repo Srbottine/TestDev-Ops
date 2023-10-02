@@ -1,0 +1,10 @@
+stages:
+  - deploy
+
+deploy_wordpress:
+  stage: deploy
+  script:
+    - kubectl apply -f wordpress.yaml
+    - kubectl apply -f mysql.yaml
+  only:
+    - master
